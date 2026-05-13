@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Fitness - Transforma Tu Cuerpo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ========== RESET Y CONFIGURACIÓN GENERAL ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background-color: #F5F5DC;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animación de fade-in */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* ========== HEADER Y NAVEGACIÓN ========== */
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff6b00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: #ff6b00;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            background: linear-gradient(rgba(255, 165, 82, 0.8), rgba(255, 165, 82, 0.8)), url('img/images.jpg') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-top: 70px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.4);
+        }
+
+        /* ========== SECCIONES GENERALES ========== */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            margin: 1rem auto;
+        }
+
+        /* ========== SERVICIOS/PROGRAMAS ========== */
+        .servicios {
+            background: #f8f8f8;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .servicio-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #ff6b00;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-top-color: #ff8c00;
+        }
+
+        .servicio-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .servicio-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .servicio-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* ========== PLANES Y PRECIOS ========== */
+        .planes {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+        }
+
+        .planes .section-title {
+            color: #fff;
+        }
+
+        .planes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .plan-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid rgba(255, 107, 0, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .plan-card:hover {
+            border-color: #ff6b00;
+            transform: scale(1.08);
+            background: rgba(255, 107, 0, 0.15);
+            box-shadow: 0 15px 40px rgba(255, 107, 0, 0.3);
+        }
+
+        .plan-destacado {
+            border-color: #ff6b00;
+            background: rgba(255, 107, 0, 0.1);
+            position: relative;
+        }
+
+        .badge-popular {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: #ff6b00;
+            color: #fff;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .plan-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            color: #ff6b00;
+        }
+
+        .precio {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 1rem 0;
+        }
+
+        .precio span {
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .plan-features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .plan-features li::before {
+            content: '✓ ';
+            color: #ff6b00;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* ========== TRANSFORMACIONES ========== */
+        .transformaciones {
+            background: #fff;
+        }
+
+        .transformaciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .transformacion-card {
+            background: #f8f8f8;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .transformacion-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .transformacion-img {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            background: #ddd;
+        }
+
+        .transformacion-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .transformacion-info {
+            padding: 1.5rem;
+        }
+
+        .transformacion-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .transformacion-stats {
+            color: #666;
+            margin: 0.5rem 0;
+            font-weight: 600;
+        }
+
+        /* ========== RUTINAS DESTACADAS ========== */
+        .rutinas {
+            background: #f8f8f8;
+        }
+
+        .rutinas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .rutina-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .rutina-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #ff6b00;
+            text-transform: uppercase;
+        }
+
+        .ejercicio-lista {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .ejercicio-lista li {
+            padding: 0.8rem;
+            background: #f8f8f8;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid #ff6b00;
+            border-radius: 5px;
+        }
+
+        .duracion {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        /* ========== POR QUÉ ELEGIRNOS ========== */
+        .ventajas {
+            background: #fff;
+        }
+
+        .ventajas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .ventaja-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .ventaja-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .ventaja-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            text-transform: uppercase;
+        }
+
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ff6b00;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ========== GALERÍA ========== */
+        .galeria {
+            background: #1a1a1a;
+            padding: 5rem 2rem;
+        }
+
+        .galeria .section-title {
+            color: #fff;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .galeria-item {
+            height: 300px;
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-item:hover {
+            transform: scale(1.05);
+        }
+
+        .galeria-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .galeria-item:hover .galeria-overlay {
+            opacity: 1;
+        }
+
+        /* ========== TESTIMONIOS ========== */
+        .testimonios {
+            background: #f8f8f8;
+        }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonio-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s ease;
+            border-left: 4px solid #ff6b00;
+        }
+
+        .testimonio-card:hover {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            border-left-color: #ff8c00;
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: #ff6b00;
+            opacity: 0.3;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        .testimonio-text {
+            font-style: italic;
+            color: #666;
+            margin: 2rem 0 1rem 0;
+            line-height: 1.8;
+        }
+
+        .testimonio-autor {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .autor-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .autor-info h4 {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+        }
+
+        .autor-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* ========== NUTRICIÓN ========== */
+        .nutricion {
+            background: #fff;
+        }
+
+        .nutricion-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nutricion-img {
+            height: 400px;
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nutricion-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .nutricion-lista {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .nutricion-lista li {
+            padding: 1rem;
+            background: #f8f8f8;
+            margin-bottom: 1rem;
+            border-left: 4px solid #ff6b00;
+            border-radius: 5px;
+        }
+
+        .nutricion-lista li strong {
+            color: #ff6b00;
+        }
+
+        /* ========== FORMULARIO DE CONTACTO ========== */
+        .contacto {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+        }
+
+        .contacto .section-title {
+            color: #fff;
+        }
+
+        .contacto-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contacto-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #ff6b00;
+        }
+
+        .info-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            color: #ff6b00;
+        }
+
+        .horario-box {
+            background: rgba(255, 107, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border: 2px solid #ff6b00;
+        }
+
+        .formulario {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff6b00;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 0, 0.4);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #0a0a0a;
+            color: #fff;
+            padding: 3rem 2rem 1rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #ff6b00;
+            text-transform: uppercase;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #bbb;
+            text-decoration: none;
+            line-height: 2;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff6b00;
+        }
+
+        .redes-sociales {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 107, 0, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff6b00;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .social-icon:hover {
+            background: #ff6b00;
+            color: #fff;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 107, 0, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+        }
+
+        /* ========== BOTÓN FLOTANTE WHATSAPP ========== */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.8rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contacto-content,
+            .nutricion-content {
+                grid-template-columns: 1fr;
+            }
+
+            .planes-grid,
+            .servicios-grid,
+            .transformaciones-grid,
+            .rutinas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* ========== ENTRENADORES ========== */
+        .entrenadores {
+            background: #fff;
+            padding: 4rem 2rem;
+        }
+
+        .trainers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .trainer-card {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .trainer-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        }
+
+        .trainer-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #ddd center/cover no-repeat;
+            margin: 0 auto 1rem auto;
+            border: 4px solid rgba(255,107,0,0.12);
+        }
+
+        .trainer-card h4 {
+            margin-bottom: 0.25rem;
+            color: #1a1a1a;
+        }
+
+        .trainer-role {
+            color: #ff6b00;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        .choose-trainer {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.7rem 1.2rem;
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* ========== CARRUSEL ========== */
+        .carousel-section {
+            background: #fff;
+            padding: 4rem 2rem;
+        }
+
+        .carousel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            background: #f8f8f8;
+            padding: 0;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 22px;
+            padding: 2rem;
+            overflow: hidden;
+            scroll-behavior: smooth;
+            transform: translateX(0);
+            transition: transform 0.5s ease-out;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .kit-card {
+            flex: 0 0 calc((100% - 44px) / 3);
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .kit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(255,107,0,0.2);
+        }
+
+        .kit-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .kit-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .kit-info h3 {
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .kit-info p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 0 0 0;
+        }
+
+        .carousel-btn {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover:not(:disabled) {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255,107,0,0.3);
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #dots {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            background: #ccc;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: #ff6b00;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        .dot:hover {
+            background: #ff8c00;
+        }
+
+        /* ========== CARRUSEL DESTACADOS ========== */
+        .carrusel {
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            padding: 3rem 0;
+            margin: 3rem 0;
+        }
+
+        .carrusel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .carrusel-container h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+
+        .carrusel-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .carrusel-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .carrusel-item {
+            flex: 0 0 100%;
+            max-width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .carrusel-item img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+            backface-visibility: hidden;
+            -webkit-font-smoothing: antialiased;
+            filter: brightness(1) contrast(1.05);
+        }
+
+        .carrusel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .carrusel-btn {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #ff6b00;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carrusel-btn:hover:not(:disabled) {
+            background: #ff6b00;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .carrusel-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Responsive para carrusel destacados */
+        @media (max-width: 768px) {
+            .carrusel-item img {
+                height: 350px;
+            }
+
+            .carrusel-controls {
+                gap: 1rem;
+            }
+
+            .carrusel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Responsivo */
+        @media (max-width: 860px) {
+            .kit-card {
+                flex: 0 0 calc((100% - 22px) / 2);
+            }
+        }
+
+        @media (max-width: 540px) {
+            .kit-card {
+                flex: 0 0 100%;
+            }
+
+            .carousel-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ========== HEADER ========== -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo/descarga.png" alt="Alpha Fitness Logo" style="height: 50px; width: 50px; vertical-align: middle; margin-right: 10px; border-radius: 50%; object-fit: cover;">
+                ALPHA FITNESS
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Programas</a></li>
+                <li><a href="#planes">Planes</a></li>
+                <li><a href="#transformaciones">Resultados</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>TRANSFORMA TU CUERPO</h1>
+            <p>Entrena Duro. Come Bien. Vive Fuerte.</p>
+            <a href="#contacto" class="cta-button">Comienza Ahora</a>
+        </div>
+    </section>
+
+    <!-- ========== DESTACADOS CARRUSEL ========== -->
+    <section class="carrusel" id="destacados">
+        <div class="carrusel-container">
+            <h2>Destacados</h2>
+            <div class="carrusel-wrapper">
+                <div class="carrusel-track" id="carrusel-track">
+                    <div class="carrusel-item">
+                        <img src="img/images.jpg" alt="Transformación Garantizada" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="img/cambios-instagram-1517572326.avif" alt="Reto 90 Días" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="img/descarga.jpg" alt="Pack Completo" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="img/spa.jpg" alt="Kit Spa Lujo" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="img/plan.jpg" alt="Plan Nutricional" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="img/entrenadora.jpg" alt="Sesión Personal" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="img/entrenador.jpg" alt="Coaching Premium" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="img/entrenadores.jpg" alt="Equipo Profesional" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="img/box.jpg" alt="Boxing Fitness" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="img/images (2).jpg" alt="Cardio Premium" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="img/sala funcional.jpg" alt="Sala Funcional" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="img/str.jpg" alt="Stretching Pro" loading="lazy">
+                    </div>
+                    <div class="carrusel-item">
+                        <img src="img/images (1).jpg" alt="Tonificación Completa" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <div class="carrusel-controls">
+                <button class="carrusel-btn" id="carrusel-prev" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carrusel-btn" id="carrusel-next" aria-label="Siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICIOS/PROGRAMAS ========== -->
+    <section class="servicios" id="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Programas</h2>
+            <div class="servicios-grid">
+                
+                <div class="servicio-card">
+                    <div class="servicio-icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3>Entrenamiento de Fuerza</h3>
+                    <p>Desarrolla músculo y potencia con nuestro programa de levantamiento de pesas diseñado para maximizar tu fuerza.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Pérdida de Grasa</h3>
+                    <p>Quema calorías con nuestro sistema HIIT combinado con nutrición estratégica para eliminar grasa corporal.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>CrossFit Funcional</h3>
+                    <p>Mejora tu resistencia, fuerza y agilidad con entrenamientos funcionales de alta intensidad.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon"><i class="fas fa-hand-fist"></i></div>
+                    <h3>Boxing Fitness</h3>
+                    <p>Combina cardio explosivo con técnicas de boxeo para un entrenamiento completo de cuerpo entero.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon"><i class="fas fa-person-hiking"></i></div>
+                    <h3>Movilidad & Yoga</h3>
+                    <p>Recuperación activa, flexibilidad y mindfulness para complementar tu entrenamiento intenso.</p>
+                </div>
+
+                <div class="servicio-card">
+                    <div class="servicio-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Entrenamiento Personal</h3>
+                    <p>Sesiones 1-a-1 personalizadas con nuestros entrenadores certificados para resultados garantizados.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PLANES Y PRECIOS ========== -->
+    <section class="planes" id="planes">
+        <div class="container">
+            <h2 class="section-title">Planes de Membresía</h2>
+            <div class="planes-grid">
+                
+                <div class="plan-card">
+                    <h3>Básico</h3>
+                    <div class="precio">$29<span>/mes</span></div>
+                    <ul class="plan-features">
+                        <li>Acceso al gimnasio 24/7</li>
+                        <li>Área de pesas completa</li>
+                        <li>Zona cardio con máquinas modernas</li>
+                        <li>Duchas y lockers</li>
+                        <li>WiFi gratuito</li>
+                    </ul>
+                    <a href="#contacto" class="cta-button">Seleccionar Plan</a>
+                </div>
+
+                <div class="plan-card plan-destacado">
+                    <span class="badge-popular">Más Popular</span>
+                    <h3>Premium</h3>
+                    <div class="precio">$59<span>/mes</span></div>
+                    <ul class="plan-features">
+                        <li>Todo lo del plan Básico</li>
+                        <li>Clases grupales ilimitadas</li>
+                        <li>2 sesiones de entrenamiento personal</li>
+                        <li>Plan nutricional personalizado</li>
+                        <li>Zona de sauna y spa</li>
+                        <li>Acceso a app de entrenamientos</li>
+                    </ul>
+                    <a href="#contacto" class="cta-button">Seleccionar Plan</a>
+                </div>
+
+                <div class="plan-card">
+                    <h3>Elite</h3>
+                    <div class="precio">$99<span>/mes</span></div>
+                    <ul class="plan-features">
+                        <li>Todo lo del plan Premium</li>
+                        <li>8 sesiones de entrenamiento personal</li>
+                        <li>Evaluación física mensual</li>
+                        <li>Seguimiento nutricional semanal</li>
+                        <li>Masajes deportivos mensuales</li>
+                        <li>Acceso prioritario a eventos</li>
+                        <li>Invitado gratis semanal</li>
+                    </ul>
+                    <a href="#contacto" class="cta-button">Seleccionar Plan</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RUTINAS DESTACADAS ========== -->
+    <section class="rutinas">
+        <div class="container">
+            <h2 class="section-title">Rutinas de Entrenamiento</h2>
+            <div class="rutinas-grid">
+                
+                <div class="rutina-card">
+                    <h3>Full Body Power</h3>
+                    <ul class="ejercicio-lista">
+                        <li>Sentadillas con barra - 4x8 reps</li>
+                        <li>Press de banca - 4x8 reps</li>
+                        <li>Peso muerto - 3x6 reps</li>
+                        <li>Press militar - 3x10 reps</li>
+                        <li>Dominadas - 3x Max</li>
+                        <li>Plancha abdominal - 3x60seg</li>
+                    </ul>
+                    <span class="duracion"><i class="fas fa-hourglass-end"></i> 60 minutos</span>
+                </div>
+
+                <div class="rutina-card">
+                    <h3>HIIT Fat Burner</h3>
+                    <ul class="ejercicio-lista">
+                        <li>Burpees - 45seg ON / 15seg OFF</li>
+                        <li>Mountain climbers - 45seg ON / 15seg OFF</li>
+                        <li>Jump squats - 45seg ON / 15seg OFF</li>
+                        <li>Battle ropes - 45seg ON / 15seg OFF</li>
+                        <li>Box jumps - 45seg ON / 15seg OFF</li>
+                        <li>Bicycle crunches - 45seg ON / 15seg OFF</li>
+                    </ul>
+                    <span class="duracion"><i class="fas fa-hourglass-end"></i> 30 minutos</span>
+                </div>
+
+                <div class="rutina-card">
+                    <h3>Upper Body Hypertrophy</h3>
+                    <ul class="ejercicio-lista">
+                        <li>Press banca inclinado - 4x12 reps</li>
+                        <li>Remo con barra - 4x10 reps</li>
+                        <li>Press arnold - 3x12 reps</li>
+                        <li>Curl de bíceps - 3x15 reps</li>
+                        <li>Fondos en paralelas - 3x12 reps</li>
+                        <li>Elevaciones laterales - 3x15 reps</li>
+                    </ul>
+                    <span class="duracion"><i class="fas fa-hourglass-end"></i> 50 minutos</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TRANSFORMACIONES ========== -->
+    <section class="transformaciones" id="transformaciones">
+        <div class="container">
+            <h2 class="section-title">Transformaciones Reales</h2>
+            <div class="transformaciones-grid">
+                
+                <div class="transformacion-card">
+                    <div class="transformacion-img">
+                        <img src="img/images (1).jpg" alt="Transformación Carlos - Antes y Después" loading="lazy">
+                    </div>
+                    <div class="transformacion-info">
+                        <h4>Carlos Méndez</h4>
+                        <p class="transformacion-stats"><i class="fas fa-hourglass-end"></i> 4 meses | <i class="fas fa-weight-scale"></i> Tonificación completa | <i class="fas fa-dumbbell"></i> Masa muscular magra</p>
+                        <p>"De sedentaria a atleta. Los resultados hablan por sí solos. Disciplina + Alpha Fitness = Éxito."</p>
+                    </div>
+                </div>
+
+                <div class="transformacion-card">
+                    <div class="transformacion-img">
+                        <img src="img/images.jpg" alt="Transformación María López - Antes y Después" loading="lazy">
+                    </div>
+                    <div class="transformacion-info">
+                        <h4>María López</h4>
+                        <p class="transformacion-stats"><i class="fas fa-hourglass-end"></i> 4 meses | <i class="fas fa-weight-scale"></i> Tonificación completa | <i class="fas fa-dumbbell"></i> Masa muscular magra</p>
+                        <p>"De sedentaria a atleta. Los resultados hablan por sí solos. Disciplina + Alpha Fitness = Éxito."</p>
+                    </div>
+                </div>
+
+                <div class="transformacion-card">
+                    <div class="transformacion-img">
+                        <img src="img/cambios-instagram-1517572326.avif" alt="Transformación David Ramírez - Antes y Después" loading="lazy">
+                    </div>
+                    <div class="transformacion-info">
+                        <h4>David Ramírez</h4>
+                        <p class="transformacion-stats"><i class="fas fa-hourglass-end"></i> 5 meses | <i class="fas fa-weight-scale"></i> -12kg | <i class="fas fa-dumbbell"></i> +8kg músculo</p>
+                        <p>"A mis 18 años logré la transformación que siempre quise. Increíble lo que se puede lograr con compromiso."</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== POR QUÉ ELEGIRNOS ========== -->
+    <section class="ventajas">
+        <div class="container">
+            <h2 class="section-title">Por Qué Alpha Fitness</h2>
+            <div class="ventajas-grid">
+                
+                <div class="ventaja-item">
+                    <div class="ventaja-icon"><i class="fas fa-trophy"></i></div>
+                    <span class="stats-number">500+</span>
+                    <h3>Miembros Activos</h3>
+                    <p>Una comunidad comprometida con la excelencia física</p>
+                </div>
+
+                <div class="ventaja-item">
+                    <div class="ventaja-icon"><i class="fas fa-chalkboard-user"></i></div>
+                    <span class="stats-number">15</span>
+                    <h3>Entrenadores Certificados</h3>
+                    <p>Expertos con certificaciones internacionales</p>
+                </div>
+
+                <div class="ventaja-item">
+                    <div class="ventaja-icon"><i class="fas fa-star"></i></div>
+                    <span class="stats-number">4.9</span>
+                    <h3>Rating Promedio</h3>
+                    <p>Calificación basada en 300+ reseñas</p>
+                </div>
+
+                <div class="ventaja-item">
+                    <div class="ventaja-icon"><i class="fas fa-lock-open"></i></div>
+                    <span class="stats-number">24/7</span>
+                    <h3>Acceso Total</h3>
+                    <p>Entrena cuando quieras, como quieras</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GALERÍA ========== -->
+    <section class="galeria">
+        <div class="container">
+            <h2 class="section-title">Nuestras Instalaciones</h2>
+            <div class="galeria-grid">
+                <div class="galeria-item" style="background: url('img/descarga.jpg') center/cover no-repeat;">
+                    <div class="galeria-overlay">Zona de Pesas</div>
+                </div>
+                <div class="galeria-item" style="background: url('img/images (2).jpg') center/cover no-repeat;">
+                    <div class="galeria-overlay">Área Cardio</div>
+                </div>
+                <div class="galeria-item" style="background: url('img/sala funcional.jpg') center/cover no-repeat;">
+                    <div class="galeria-overlay">Sala Funcional</div>
+                </div>
+                <div class="galeria-item" style="background: url('img/box.jpg') center/cover no-repeat;">
+                    <div class="galeria-overlay">Boxing Ring</div>
+                </div>
+                <div class="galeria-item" style="background: url('img/str.jpg') center/cover no-repeat;">
+                    <div class="galeria-overlay">Zona Stretching</div>
+                </div>
+                <div class="galeria-item" style="background: url('img/spa.jpg') center/cover no-repeat;">
+                    <div class="galeria-overlay">Sauna & Spa</div>
+                </div>
+                <div class="galeria-item" style="background: url('img/plan.jpg') center/cover no-repeat;">
+                    <div class="galeria-overlay">Nutrición Deportiva</div>
+                </div>
+                <div class="galeria-item" style="background: url('img/entrenador.jpg') center/cover no-repeat;">
+                    <div class="galeria-overlay">Entrenamiento 1v1</div>
+                </div>
+                <div class="galeria-item" style="background: url('img/entrenadora.jpg') center/cover no-repeat;">
+                    <div class="galeria-overlay">Clases Personalizadas</div>
+                </div>
+                <div class="galeria-item" style="background: url('img/entrenadores.jpg') center/cover no-repeat;">
+                    <div class="galeria-overlay">Equipo Profesional</div>
+                </div>
+                <div class="galeria-item" style="background: url('img/images.jpg') center/cover no-repeat;">
+                    <div class="galeria-overlay">Transformaciones</div>
+                </div>
+                <div class="galeria-item" style="background: url('img/cambios-instagram-1517572326.avif') center/cover no-repeat;">
+                    <div class="galeria-overlay">Resultados Verificados</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NUTRICIÓN ========== -->
+    <section class="nutricion">
+        <div class="container">
+            <h2 class="section-title">Nutrición Deportiva</h2>
+            <div class="nutricion-content">
+                <div class="nutricion-img" style="background: url('img/plan.jpg') center/cover no-repeat; color: transparent;">PLAN NUTRICIONAL</div>
+                <div class="nutricion-info">
+                    <h3>Alimenta Tu Transformación</h3>
+                    <p>El 70% de tus resultados vienen de la cocina. Nuestros nutricionistas deportivos crean planes personalizados para:</p>
+                    <ul class="nutricion-lista">
+                        <li><strong>Ganar Masa Muscular:</strong> Superávit calórico controlado con macros optimizados</li>
+                        <li><strong>Perder Grasa:</strong> Déficit estratégico manteniendo músculo y energía</li>
+                        <li><strong>Rendimiento:</strong> Timing de nutrientes para maximizar entrenamientos</li>
+                        <li><strong>Salud General:</strong> Hábitos sostenibles y alimentos reales</li>
+                    </ul>
+                    <a href="#contacto" class="cta-button">Consulta Gratis</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIOS ========== -->
+    <section class="testimonios">
+        <div class="container">
+            <h2 class="section-title">Lo Que Dicen Nuestros Miembros</h2>
+            <div class="testimonios-grid">
+                
+                <div class="testimonio-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonio-text">Llevo 6 meses entrenando en Alpha Fitness y los resultados han superado mis expectativas. Los entrenadores son increíbles y el ambiente es motivador. ¡100% recomendado!</p>
+                    <div class="testimonio-autor">
+                        <div class="autor-img">JR</div>
+                        <div class="autor-info">
+                            <h4>José Rodríguez</h4>
+                            <p>Miembro Premium</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonio-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonio-text">Después de probar varios gimnasios, Alpha Fitness es el único donde realmente vi cambios. El seguimiento nutricional y las clases grupales son excelentes.</p>
+                    <div class="testimonio-autor">
+                        <div class="autor-img">AM</div>
+                        <div class="autor-info">
+                            <h4>Andrés Martínez</h4>
+                            <p>Miembro Elite</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonio-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonio-text">Las instalaciones son de primer nivel y el personal siempre está dispuesto a ayudar. Me siento como en casa. Mejor inversión que he hecho en mi salud.</p>
+                    <div class="testimonio-autor">
+                        <div class="autor-img">LG</div>
+                        <div class="autor-info">
+                            <h4>Luis Gómez</h4>
+                            <p>Miembro Básico</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACTO ========== -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Comienza Tu Transformación</h2>
+            <div class="contacto-content">
+                
+                <div class="contacto-info">
+                    <h3>Información de Contacto</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <strong>Ubicación:</strong><br>
+                            <a href="https://maps.app.goo.gl/nR91uZzk1Q7AX8Mo8" target="_blank">santiago de los caballeros licey al medio</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <strong>Teléfono:</strong><br>
+                            +1 (809) 555-FITNESS<br>
+                            +1 (809) 555-0123
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <strong>Email:</strong><br>
+                            maximilianoggomezrodri@gmail.com<br>
+                            ventas@alphafitness.com
+                        </div>
+                    </div>
+
+                    <div class="horario-box">
+                        <h4 style="color: #ff6b00; margin-bottom: 1rem;"><i class="fas fa-clock"></i> Horarios de Atención</h4>
+                        <p><strong>Lunes a Viernes:</strong> 5:00 AM - 11:00 PM</p>
+                        <p><strong>Sábados:</strong> 6:00 AM - 10:00 PM</p>
+                        <p><strong>Domingos:</strong> 7:00 AM - 8:00 PM</p>
+                        <p style="margin-top: 1rem; color: #ff6b00;"><strong>* Acceso 24/7 para miembros Premium y Elite</strong></p>
+                    </div>
+
+                    <div class="redes-sociales">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="formulario">
+                    <form>
+                            <input type="hidden" id="entrenador" name="entrenador" value="">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="objetivo">Objetivo de Entrenamiento *</label>
+                            <select id="objetivo" name="objetivo" required>
+                                <option value="">Selecciona tu objetivo</option>
+                
+                                <option value="ganar-musculo">Ganar Masa Muscular</option>
+                                <option value="perder-grasa">Perder Grasa Corporal</option>
+                                <option value="fuerza">Aumentar Fuerza</option>
+                                <option value="resistencia">Mejorar Resistencia</option>
+                                <option value="tonificacion">Tonificación / Definición</option>
+                                <option value="movilidad">Mejorar Movilidad / Flexibilidad</option>
+                                <option value="rehabilitacion">Rehabilitación / Recuperación</option>
+                                <option value="competencia">Preparación para Competencia</option>
+                                <option value="bienestar">Bienestar / Reducción de Estrés</option>
+                                <option value="salud">Salud General</option>
+                                <option value="otro">Otro (especificar en Mensaje)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="plan">Plan de Interés</label>
+                            <select id="plan" name="plan">
+                                <option value="">Selecciona un plan</option>
+                                <option value="basico">Básico - Acceso a rutinas y seguimiento mensual</option>
+                                <option value="premium">Premium - Rutinas + seguimiento quincenal + asesoría nutricional</option>
+                                <option value="elite">Elite - Entrenamiento personalizado + seguimiento semanal + planos nutricionales</option>
+                                <option value="personalizado">Entrenamiento Personalizado (1:1)</option>
+                                <option value="grupales">Clases Grupales</option>
+                                <option value="online">Plan Online / Virtual</option>
+                                <option value="paquete-nutricion">Plan + Nutrición</option>
+                                <option value="sesion-unica">Sesión Única / Evaluación</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Servicios Adicionales (marca los que te interesen)</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="servicios" value="nutricion"> Asesoría nutricional</label>
+                                <label><input type="checkbox" name="servicios" value="evaluacion"> Evaluación física inicial</label>
+                                <label><input type="checkbox" name="servicios" value="seguimiento_online"> Seguimiento online</label>
+                                <label><input type="checkbox" name="servicios" value="suplementos"> Plan de suplementos</label>
+                                <label><input type="checkbox" name="servicios" value="entrenamiento_en_casa"> Entrenamiento en casa</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje Adicional</label>
+                            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos más sobre tus objetivos, experiencia previa, horarios preferidos, etc."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Solicitar Información</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== VIDEO PROMOCIONAL Y MÚSICA ========== -->
+    <section class="media-section" style="background: #1a1a1a; padding: 5rem 2rem;">
+        <div class="container">
+            <h2 class="section-title" style="color: #fff;">Vive la Experiencia Alpha</h2>
+            
+            <!-- Video Promocional -->
+            <div style="max-width: 900px; margin: 0 auto 4rem auto; text-align: center;">
+                <h3 style="color: #ff6b00; font-size: 1.5rem; margin-bottom: 1.5rem; text-transform: uppercase;"><i class="fas fa-film"></i> Video Promocional</h3>
+                <video controls style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);">
+                    <source src="video/video.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                <p style="color: #888; margin-top: 1rem; font-size: 0.9rem;"><i class="fas fa-sparkles"></i> Descubre por qué Alpha Fitness es diferente</p>
+            </div>
+            
+            <!-- Música Motivacional -->
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <h3 style="color: #ff6b00; font-size: 1.5rem; margin-bottom: 1.5rem; text-transform: uppercase;"><i class="fas fa-music"></i> Música Motivacional Para Entrenar</h3>
+                <p style="color: #fff; margin-bottom: 1.5rem; font-size: 1.1rem;">Activa tu energía con nuestro beat de 130 BPM</p>
+                <audio id="main-audio" controls preload="metadata" style="width: 100%; max-width: 600px; margin: 0 auto;">
+                    <source src="audio/audio.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio. <a href="audio/audio.mp3" target="_blank">Descargar audio</a>
+                </audio>
+                <p id="audio-msg" style="color:#ff6b00; margin-top:0.75rem; display:none;"></p>
+                <p style="color: #888; margin-top: 1rem; font-size: 0.9rem;"><i class="fas fa-dumbbell"></i> Música diseñada para maximizar tu rendimiento en cada repetición</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    
+    <!-- ========== ENTRENADORES / TU ENTRENADOR PERSONAL ========== -->
+    <section class="entrenadores" id="entrenadores">
+        <div class="container">
+            <h2 class="section-title">Tu Entrenador Personal</h2>
+            <p style="text-align:center; color:#666; margin-top:0.5rem;">Elige un entrenador y podremos asignarlo para acompañarte en tu plan.</p>
+            <div class="trainers-grid">
+                <div class="trainer-card">
+                    <div class="trainer-img" style="background: url('img/entrenador.jpg') center/cover;"></div>
+                    <h4>Juan Pérez</h4>
+                    <div class="trainer-role">Fuerza & Hipertrofia</div>
+                    <p>Entrenador con 8 años de experiencia en ganancia muscular y programación personalizada.</p>
+                    <button class="choose-trainer" data-trainer="Juan Pérez">Elegir entrenador</button>
+                </div>
+
+                <div class="trainer-card">
+                    <div class="trainer-img" style="background: url('img/entrenadora.jpg') center/cover;"></div>
+                    <h4>María López</h4>
+                    <div class="trainer-role">Pérdida de Grasa & HIIT</div>
+                    <p>Especialista en planes de transformación rápida y hábitos sostenibles de alimentación.</p>
+                    <button class="choose-trainer" data-trainer="María López">Elegir entrenador</button>
+                </div>
+
+                <div class="trainer-card">
+                    <div class="trainer-img" style="background: url('img/entrenadores.jpg') center/cover;"></div>
+                    <h4>Carlos Méndez y Teresa Rodriguez</h4>
+                    <div class="trainer-role">Rendimiento & Movilidad</div>
+                    <p>Foco en prevención de lesiones, movilidad y mejora del rendimiento funcional.</p>
+                    <button class="choose-trainer" data-trainer="Carlos Méndez">Elegir entrenador</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            
+            <div class="footer-section">
+                <h3>Sobre Alpha Fitness</h3>
+                <p>Somos más que un gimnasio, somos tu aliado en la transformación física y mental. Con equipamiento de última generación y entrenadores certificados, te ayudamos a alcanzar tus metas.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <p><a href="#inicio">Inicio</a></p>
+                <p><a href="#servicios">Programas</a></p>
+                <p><a href="#planes">Planes</a></p>
+                <p><a href="#transformaciones">Resultados</a></p>
+                <p><a href="#contacto">Contacto</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <p><a href="#servicios">Entrenamiento Personal</a></p>
+                <p><a href="#servicios">Clases Grupales</a></p>
+                <p><a href="#nutricion">Nutrición Deportiva</a></p>
+                <p><a href="#planes">Membresías</a></p>
+                <p><a href="#galeria">Instalaciones</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Métodos de Pago</h3>
+                <p><i class="fas fa-credit-card"></i> Tarjetas de Crédito/Débito</p>
+                <p><i class="fas fa-money-bill"></i> Efectivo</p>
+                <p><i class="fas fa-landmark"></i> Transferencia Bancaria</p>
+                <p><i class="fas fa-mobile"></i> Pagos Móviles</p>
+                <p style="margin-top: 1rem; color: #ff6b00;"><strong><i class="fas fa-check"></i> Certificado de Calidad ISO 9001</strong></p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Alpha Fitness. Todos los derechos reservados. | Diseñado con <i class="fas fa-dumbbell"></i> para transformar vidas</p>
+        </div>
+    </footer>
+
+    <!-- ========== BOTÓN FLOTANTE WHATSAPP ========== -->
+    <a href="https://wa.me/18297079979" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <script>
+        // ========== FORM VALIDATION ==========
+        class FormValidator {
+            constructor(formSelector) {
+                this.form = document.querySelector(formSelector);
+                if (!this.form) return;
+                
+                this.submitBtn = this.form.querySelector('button[type="submit"]');
+                this.setupValidation();
+                this.setupSubmission();
+            }
+            
+            setupValidation() {
+                const inputs = this.form.querySelectorAll('input[required], textarea[required], select[required]');
+                
+                inputs.forEach(input => {
+                    input.addEventListener('blur', () => this.validateField(input));
+                    input.addEventListener('input', () => {
+                        if (input.classList.contains('error')) {
+                            this.validateField(input);
+                        }
+                    });
+                });
+            }
+            
+            validateField(field) {
+                let isValid = true;
+                let errorMsg = '';
+                
+                if (field.type === 'email') {
+                    isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value);
+                    errorMsg = 'Email inválido';
+                } else if (field.type === 'tel') {
+                    isValid = /^[\d\s\-\(\)]{7,}$/.test(field.value);
+                    errorMsg = 'Teléfono inválido';
+                } else if (field.required && !field.value.trim()) {
+                    isValid = false;
+                    errorMsg = 'Campo requerido';
+                }
+                
+                if (!isValid) {
+                    field.classList.add('error');
+                    this.showError(field, errorMsg);
+                } else {
+                    field.classList.remove('error');
+                    this.removeError(field);
+                }
+                
+                return isValid;
+            }
+            
+            showError(field, msg) {
+                let errorEl = field.parentElement.querySelector('.error-msg');
+                if (!errorEl) {
+                    errorEl = document.createElement('span');
+                    errorEl.className = 'error-msg';
+                    field.parentElement.appendChild(errorEl);
+                }
+                errorEl.textContent = msg;
+                errorEl.setAttribute('role', 'alert');
+            }
+            
+            removeError(field) {
+                const errorEl = field.parentElement.querySelector('.error-msg');
+                if (errorEl) errorEl.remove();
+            }
+            
+            setupSubmission() {
+                this.form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    const fields = this.form.querySelectorAll('input[required], textarea[required], select[required]');
+                    let allValid = true;
+                    
+                    fields.forEach(field => {
+                        if (!this.validateField(field)) {
+                            allValid = false;
+                        }
+                    });
+                    
+                    if (allValid) {
+                        this.setLoading(true);
+                        await this.submitForm();
+                        this.setLoading(false);
+                    } else {
+                        this.showGeneralError('Por favor, completa todos los campos correctamente');
+                    }
+                });
+            }
+            
+            setLoading(isLoading) {
+                if (!this.submitBtn) return;
+                
+                if (isLoading) {
+                    this.submitBtn.disabled = true;
+                    this.submitBtn.innerHTML = '<span class="spinner"></span> Enviando...';
+                } else {
+                    this.submitBtn.disabled = false;
+                    this.submitBtn.textContent = 'Solicitar Información';
+                }
+            }
+            
+            async submitForm() {
+                const formData = new FormData(this.form);
+                const data = Object.fromEntries(formData);
+                
+                try {
+                    // Simulate API call (replace with actual endpoint)
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    this.showSuccessMessage();
+                    this.form.reset();
+                } catch (error) {
+                    this.showGeneralError('Error al enviar. Intenta más tarde.');
+                    console.error(error);
+                }
+            }
+            
+            showSuccessMessage() {
+                const msg = document.createElement('div');
+                msg.className = 'success-message';
+                msg.setAttribute('role', 'status');
+                msg.setAttribute('aria-live', 'polite');
+                msg.textContent = '✓ Tu mensaje fue enviado exitosamente. Te contactaremos pronto.';
+                this.form.prepend(msg);
+                
+                setTimeout(() => msg.remove(), 5000);
+            }
+            
+            showGeneralError(text) {
+                const msg = document.createElement('div');
+                msg.className = 'form-error-message';
+                msg.setAttribute('role', 'alert');
+                msg.setAttribute('aria-live', 'assertive');
+                msg.textContent = text;
+                this.form.prepend(msg);
+                
+                setTimeout(() => msg.remove(), 5000);
+            }
+        }
+
+        document.querySelectorAll('.choose-trainer').forEach(function(btn){
+            btn.addEventListener('click', function(){
+                var nombre = this.getAttribute('data-trainer');
+                var input = document.getElementById('entrenador');
+                if(input) input.value = nombre;
+                // Ir al formulario de contacto
+                location.hash = '#contacto';
+                var nombreField = document.getElementById('nombre');
+                if(nombreField) nombreField.focus();
+            });
+        });
+
+        // ========== CARRUSEL DESTACADOS ==========
+        (function() {
+            const track = document.getElementById('carrusel-track');
+            const prevBtn = document.getElementById('carrusel-prev');
+            const nextBtn = document.getElementById('carrusel-next');
+            
+            if (!track || !prevBtn || !nextBtn) return;
+            
+            const items = Array.from(track.children);
+            let current = 0;
+            let autoplayInterval = null;
+            
+            function updateCarousel() {
+                const itemWidth = items[0].getBoundingClientRect().width;
+                track.style.transform = `translateX(-${current * (itemWidth + 32)}px)`;
+                prevBtn.disabled = current === 0;
+                nextBtn.disabled = current === items.length - 1;
+            }
+            
+            function stopAutoplay() {
+                if (autoplayInterval) {
+                    clearInterval(autoplayInterval);
+                    autoplayInterval = null;
+                }
+            }
+            
+            function startAutoplay() {
+                stopAutoplay();
+                autoplayInterval = setInterval(() => {
+                    if (current < items.length - 1) {
+                        current++;
+                    } else {
+                        current = 0;
+                    }
+                    updateCarousel();
+                }, 2000);
+            }
+            
+            prevBtn.addEventListener('click', () => {
+                stopAutoplay();
+                if (current > 0) {
+                    current--;
+                    updateCarousel();
+                }
+                startAutoplay();
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                stopAutoplay();
+                if (current < items.length - 1) {
+                    current++;
+                    updateCarousel();
+                }
+                startAutoplay();
+            });
+            
+            // Soporte para teclado
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft' && current > 0) {
+                    stopAutoplay();
+                    current--;
+                    updateCarousel();
+                    startAutoplay();
+                } else if (e.key === 'ArrowRight' && current < items.length - 1) {
+                    stopAutoplay();
+                    current++;
+                    updateCarousel();
+                    startAutoplay();
+                }
+            });
+            
+            // Soporte para touch en móviles
+            let startX = 0;
+            track.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+                stopAutoplay();
+            }, { passive: true });
+            
+            track.addEventListener('touchend', (e) => {
+                const endX = e.changedTouches[0].clientX;
+                const diff = startX - endX;
+                
+                if (diff > 50 && current < items.length - 1) {
+                    current++;
+                    updateCarousel();
+                } else if (diff < -50 && current > 0) {
+                    current--;
+                    updateCarousel();
+                }
+                startAutoplay();
+            });
+            
+            // Ajuste responsivo
+            window.addEventListener('resize', () => {
+                updateCarousel();
+            });
+            
+            updateCarousel();
+            startAutoplay();
+        })();
+
+        // Audio diagnostics
+        (function(){
+            var audio = document.getElementById('main-audio');
+            var msg = document.getElementById('audio-msg');
+            if(!audio) return;
+            audio.addEventListener('error', function(e){
+                console.error('Audio error event', e);
+                if(msg){ msg.style.display='block'; msg.innerHTML = 'No se pudo cargar el audio en el navegador. Prueba <a href="audio/audio.mp3" target="_blank">descargarlo</a>.'; }
+            });
+            audio.addEventListener('canplaythrough', function(){
+                if(msg){ msg.style.display='none'; }
+            });
+            audio.addEventListener('stalled', function(){
+                if(msg){ msg.style.display='block'; msg.textContent = 'La reproducción se quedó cargando. Intenta recargar la página.'; }
+            });
+            // Intento de carga y check de sources
+            setTimeout(function(){
+                var src = audio.currentSrc || (audio.querySelector('source') && audio.querySelector('source').src);
+                console.log('Audio currentSrc:', src);
+            }, 500);
+        })();
+    </script>
+</body>
+</html>
